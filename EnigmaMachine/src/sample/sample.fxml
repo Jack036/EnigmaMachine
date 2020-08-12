@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="699.0" minWidth="10.0" prefWidth="648.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="0.0" prefWidth="332.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <GridPane fx:id="rightMenu" GridPane.columnIndex="1">
+        <columnConstraints>
+          <ColumnConstraints hgrow="NEVER" maxWidth="271.0" minWidth="10.0" prefWidth="167.0" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="161.0" minWidth="10.0" prefWidth="71.0" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="161.0" minWidth="10.0" prefWidth="94.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="BOTTOM_LEFT" prefHeight="36.0" prefWidth="166.0" text="Left Rotor" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="BOTTOM_LEFT" prefHeight="36.0" prefWidth="166.0" text="Position" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="BOTTOM_LEFT" prefHeight="36.0" prefWidth="166.0" text="Ring Setting" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="leftRotorChoice" prefHeight="25.0" prefWidth="158.0" promptText="ROTOR I" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="ROTORI" />
+                        <String fx:value="ROTORII" />
+                        <String fx:value="ROTORIII" />
+                        <String fx:value="ROTORIV" />
+                        <String fx:value="ROTORV" />
+                        <String fx:value="ROTORVI" />
+                        <String fx:value="ROTORVII" />
+                        <String fx:value="ROTORVIII" />
+                    </FXCollections>
+                </items>
+
+            </ComboBox>
+            <Label alignment="BOTTOM_LEFT" prefHeight="36.0" prefWidth="166.0" text="Middle Rotor" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="BOTTOM_LEFT" prefHeight="36.0" prefWidth="166.0" text="Right Rotor" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="BOTTOM_LEFT" prefHeight="36.0" prefWidth="166.0" text="Reflector" GridPane.rowIndex="10">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="submitRotors" mnemonicParsing="false" onAction="#submitBtnPressed" prefHeight="25.0" prefWidth="99.0" text="Submit" GridPane.halignment="CENTER" GridPane.rowIndex="14" GridPane.valignment="BOTTOM" />
+            <Button fx:id="resetRotors" mnemonicParsing="false" onAction="#resetBtnPressed" prefHeight="25.0" prefWidth="99.0" text="Reset" GridPane.halignment="CENTER" GridPane.rowIndex="15" GridPane.valignment="BOTTOM" />
+            <Button fx:id="clearText" mnemonicParsing="false" onAction="#clearTextBtnPressed" prefHeight="25.0" prefWidth="99.0" text="Clear Text" GridPane.halignment="CENTER" GridPane.rowIndex="18" GridPane.valignment="BOTTOM" />
+            <ComboBox fx:id="midRotorChoice" prefHeight="25.0" prefWidth="158.0" promptText="ROTOR II" GridPane.rowIndex="5">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="ROTORI" />
+                     <String fx:value="ROTORII" />
+                     <String fx:value="ROTORIII" />
+                     <String fx:value="ROTORIV" />
+                     <String fx:value="ROTORV" />
+                     <String fx:value="ROTORVI" />
+                     <String fx:value="ROTORVII" />
+                     <String fx:value="ROTORVIII" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <ComboBox fx:id="rightRotorChoice" prefHeight="25.0" prefWidth="158.0" promptText="ROTOR III" GridPane.rowIndex="8">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="ROTORI" />
+                     <String fx:value="ROTORII" />
+                     <String fx:value="ROTORIII" />
+                     <String fx:value="ROTORIV" />
+                     <String fx:value="ROTORV" />
+                     <String fx:value="ROTORVI" />
+                     <String fx:value="ROTORVII" />
+                     <String fx:value="ROTORVIII" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <ComboBox fx:id="reflectorChoice" prefHeight="25.0" prefWidth="158.0" promptText="REFLECTOR-B" GridPane.rowIndex="11">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="REFLECTOR-B" />
+                     <String fx:value="REFLECTOR-C" />
+                     <String fx:value="REFLECTOR-B Thin" />
+                     <String fx:value="REFLECTOR-C Thin" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <ComboBox fx:id="leftPosition" prefHeight="25.0" prefWidth="63.0" promptText="A" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="A" />
+                      <String fx:value="B" />
+                      <String fx:value="C" />
+                      <String fx:value="D" />
+                      <String fx:value="E" />
+                      <String fx:value="F" />
+                      <String fx:value="G" />
+                      <String fx:value="H" />
+                      <String fx:value="I" />
+                      <String fx:value="J" />
+                      <String fx:value="K" />
+                      <String fx:value="L" />
+                      <String fx:value="M" />
+                      <String fx:value="N" />
+                      <String fx:value="O" />
+                      <String fx:value="P" />
+                      <String fx:value="Q" />
+                      <String fx:value="R" />
+                      <String fx:value="S" />
+                      <String fx:value="T" />
+                      <String fx:value="U" />
+                      <String fx:value="V" />
+                      <String fx:value="W" />
+                      <String fx:value="X" />
+                      <String fx:value="Y" />
+                      <String fx:value="Z" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <ComboBox fx:id="leftRingSetting" prefHeight="25.0" prefWidth="78.0" promptText="A-01" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="A-01" />
+                      <String fx:value="B-02" />
+                      <String fx:value="C-03" />
+                      <String fx:value="D-04" />
+                      <String fx:value="E-05" />
+                      <String fx:value="F-06" />
+                      <String fx:value="G-07" />
+                      <String fx:value="H-08" />
+                      <String fx:value="I-09" />
+                      <String fx:value="J-10" />
+                      <String fx:value="K-11" />
+                      <String fx:value="L-12" />
+                      <String fx:value="M-13" />
+                      <String fx:value="N-14" />
+                      <String fx:value="O-15" />
+                      <String fx:value="P-16" />
+                      <String fx:value="Q-17" />
+                      <String fx:value="R-18" />
+                      <String fx:value="S-19" />
+                      <String fx:value="T-20" />
+                      <String fx:value="U-21" />
+                      <String fx:value="V-22" />
+                      <String fx:value="W-23" />
+                      <String fx:value="X-24" />
+                      <String fx:value="Y-25" />
+                      <String fx:value="Z-26" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <ComboBox fx:id="midPosition" prefHeight="25.0" prefWidth="63.0" promptText="A" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="A" />
+                     <String fx:value="B" />
+                     <String fx:value="C" />
+                     <String fx:value="D" />
+                     <String fx:value="E" />
+                     <String fx:value="F" />
+                     <String fx:value="G" />
+                     <String fx:value="H" />
+                     <String fx:value="I" />
+                     <String fx:value="J" />
+                     <String fx:value="K" />
+                     <String fx:value="L" />
+                     <String fx:value="M" />
+                     <String fx:value="N" />
+                     <String fx:value="O" />
+                     <String fx:value="P" />
+                     <String fx:value="Q" />
+                     <String fx:value="R" />
+                     <String fx:value="S" />
+                     <String fx:value="T" />
+                     <String fx:value="U" />
+                     <String fx:value="V" />
+                     <String fx:value="W" />
+                     <String fx:value="X" />
+                     <String fx:value="Y" />
+                     <String fx:value="Z" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <ComboBox fx:id="rightPosition" prefHeight="25.0" prefWidth="63.0" promptText="A" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="A" />
+                     <String fx:value="B" />
+                     <String fx:value="C" />
+                     <String fx:value="D" />
+                     <String fx:value="E" />
+                     <String fx:value="F" />
+                     <String fx:value="G" />
+                     <String fx:value="H" />
+                     <String fx:value="I" />
+                     <String fx:value="J" />
+                     <String fx:value="K" />
+                     <String fx:value="L" />
+                     <String fx:value="M" />
+                     <String fx:value="N" />
+                     <String fx:value="O" />
+                     <String fx:value="P" />
+                     <String fx:value="Q" />
+                     <String fx:value="R" />
+                     <String fx:value="S" />
+                     <String fx:value="T" />
+                     <String fx:value="U" />
+                     <String fx:value="V" />
+                     <String fx:value="W" />
+                     <String fx:value="X" />
+                     <String fx:value="Y" />
+                     <String fx:value="Z" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <ComboBox fx:id="midRingSetting" prefHeight="25.0" prefWidth="78.0" promptText="A-01" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="A-01" />
+                     <String fx:value="B-02" />
+                     <String fx:value="C-03" />
+                     <String fx:value="D-04" />
+                     <String fx:value="E-05" />
+                     <String fx:value="F-06" />
+                     <String fx:value="G-07" />
+                     <String fx:value="H-08" />
+                     <String fx:value="I-09" />
+                     <String fx:value="J-10" />
+                     <String fx:value="K-11" />
+                     <String fx:value="L-12" />
+                     <String fx:value="M-13" />
+                     <String fx:value="N-14" />
+                     <String fx:value="O-15" />
+                     <String fx:value="P-16" />
+                     <String fx:value="Q-17" />
+                     <String fx:value="R-18" />
+                     <String fx:value="S-19" />
+                     <String fx:value="T-20" />
+                     <String fx:value="U-21" />
+                     <String fx:value="V-22" />
+                     <String fx:value="W-23" />
+                     <String fx:value="X-24" />
+                     <String fx:value="Y-25" />
+                     <String fx:value="Z-26" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <ComboBox fx:id="rightRingSetting" prefHeight="25.0" prefWidth="78.0" promptText="A-01" GridPane.columnIndex="2" GridPane.rowIndex="8">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="A-01" />
+                     <String fx:value="B-02" />
+                     <String fx:value="C-03" />
+                     <String fx:value="D-04" />
+                     <String fx:value="E-05" />
+                     <String fx:value="F-06" />
+                     <String fx:value="G-07" />
+                     <String fx:value="H-08" />
+                     <String fx:value="I-09" />
+                     <String fx:value="J-10" />
+                     <String fx:value="K-11" />
+                     <String fx:value="L-12" />
+                     <String fx:value="M-13" />
+                     <String fx:value="N-14" />
+                     <String fx:value="O-15" />
+                     <String fx:value="P-16" />
+                     <String fx:value="Q-17" />
+                     <String fx:value="R-18" />
+                     <String fx:value="S-19" />
+                     <String fx:value="T-20" />
+                     <String fx:value="U-21" />
+                     <String fx:value="V-22" />
+                     <String fx:value="W-23" />
+                     <String fx:value="X-24" />
+                     <String fx:value="Y-25" />
+                     <String fx:value="Z-26" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <Button fx:id="copyText" mnemonicParsing="false" onAction="#copyTextBtnPressed" prefHeight="25.0" prefWidth="99.0" text="Copy Output" GridPane.halignment="CENTER" GridPane.rowIndex="16" GridPane.valignment="BOTTOM" />
+            <Label fx:id="copiedLabel" alignment="BOTTOM_LEFT" text="Copied!" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="16" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="495.0" minHeight="10.0" prefHeight="491.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="355.0" minHeight="10.0" prefHeight="209.0" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <GridPane fx:id="keyboard" GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane fx:id="qwerty" GridPane.rowIndex="0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#yBtnPressed" prefHeight="46.0" prefWidth="48.0" text="Y" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#pBtnPressed" prefHeight="46.0" prefWidth="48.0" text="P" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#oBtnPressed" prefHeight="46.0" prefWidth="48.0" text="O" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#iBtnPressed" prefHeight="46.0" prefWidth="48.0" text="I" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#uBtnPressed" prefHeight="46.0" prefWidth="48.0" text="U" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#tBtnPressed" prefHeight="46.0" prefWidth="48.0" text="T" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#rBtnPressed" prefHeight="46.0" prefWidth="48.0" text="R" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#eBtnPressed" prefHeight="46.0" prefWidth="48.0" text="E" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#wBtnPressed" prefHeight="46.0" prefWidth="48.0" text="W" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#qBtnPressed" prefHeight="46.0" prefWidth="48.0" text="Q" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+
+
+                  <GridPane fx:id="asdfg" GridPane.rowIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#aBtnPressed" prefHeight="46.0" prefWidth="48.0" text="A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
+                        <Button mnemonicParsing="false" onAction="#sBtnPressed" prefHeight="46.0" prefWidth="48.0" text="S" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#dBtnPressed" prefHeight="46.0" prefWidth="48.0" text="D" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#fBtnPressed" prefHeight="46.0" prefWidth="48.0" text="F" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#gBtnPressed" prefHeight="46.0" prefWidth="48.0" text="G" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#hBtnPressed" prefHeight="46.0" prefWidth="48.0" text="H" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#jBtnPressed" prefHeight="46.0" prefWidth="48.0" text="J" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#kBtnPressed" prefHeight="46.0" prefWidth="48.0" text="K" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#lBtnPressed" prefHeight="46.0" prefWidth="48.0" text="L" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+
+
+                  <GridPane fx:id="zxcvb" GridPane.rowIndex="2">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#zBtnPressed" prefHeight="46.0" prefWidth="48.0" text="Z" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#mBtnPressed" prefHeight="46.0" prefWidth="48.0" text="M" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#xBtnPressed" prefHeight="46.0" prefWidth="48.0" text="X" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#cBtnPressed" prefHeight="46.0" prefWidth="48.0" text="C" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#vBtnPressed" prefHeight="46.0" prefWidth="48.0" text="V" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#bBtnPressed" prefHeight="46.0" prefWidth="48.0" text="B" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#nBtnPressed" prefHeight="46.0" prefWidth="48.0" text="N" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="lights" prefHeight="422.0" prefWidth="645.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="294.0" minHeight="10.0" prefHeight="263.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="243.0" minHeight="10.0" prefHeight="204.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="204.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane prefHeight="174.0" prefWidth="648.0" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+                  <GridPane fx:id="keyboard" GridPane.rowIndex="1">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <GridPane fx:id="qwerty" GridPane.rowIndex="0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Circle fx:id="qLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="wLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="eLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="rLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="tLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="yLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="uLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="iLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="oLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="pLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Label text="Q" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font></Label>
+                              <Label text="W" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="E" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="R" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="T" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Y" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="U" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="I" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="O" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="P" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="asdfg" GridPane.rowIndex="1">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Circle fx:id="aLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="sLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="dLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="fLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+                              <Circle fx:id="gLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="hLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="jLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="kLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="lLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Label text="A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="S" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="D" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="F" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="G" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="H" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="J" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="K" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="L" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="zxcvb" GridPane.rowIndex="2">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Circle fx:id="zLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" fx:id="xLamp" />
+                              <Circle fx:id="cLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="vLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="bLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="nLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Circle fx:id="mLamp" fill="#5a5a5a" radius="27.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Label text="Z" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="X" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="C" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="V" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="B" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="N" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label text="M" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="237.0" minHeight="10.0" prefHeight="223.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="135.0" text="Input Text">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="36.0" prefWidth="166.0" text="Output Text" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="inputLabel" alignment="TOP_LEFT" prefHeight="204.0" prefWidth="296.0" wrapText="true" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="outputLabel" alignment="TOP_LEFT" prefHeight="204.0" prefWidth="296.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+      </GridPane>
+   </children>
+</GridPane>
